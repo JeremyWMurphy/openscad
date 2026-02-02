@@ -44,6 +44,8 @@ translate([-20,-50,-28.7]){
 cube([5,100,3.1]);
 }
 
+translate([-3.5,-10,1.3]){
+union(){
 translate([-20,50,-30]){
 difference(){
 hull(){
@@ -61,5 +63,6 @@ cylinder(h=8,d=7.1);
 }
 }
 }
-
+}
+}
 
