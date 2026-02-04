@@ -1,6 +1,7 @@
 $fn = 100;
 
 difference(){
+translate([0,0,0]){
 union(){
 difference(){
 rotate([90,0,0]){
@@ -9,12 +10,13 @@ cylinder(h=50,d=70);
 
 translate([0,3,0]){
 rotate([90,0,0]){
-cylinder(h=56,d=65);
+cylinder(h=56,d=63.5);
 }
 }
 
 }
 
+}
 }
 
 translate([-20,-60,-40]){
@@ -40,29 +42,44 @@ cylinder(h=30,d=20);
 }
 }
 
-translate([-20,-50,-28.7]){
-cube([5,100,3.1]);
+
+
+translate([-2.5,-10,1]){
+    union(){
+        translate([-20,50,-30]){
+            difference(){
+                union(){
+                    translate([-1.5,-90,0]){
+                        cube([4,100,4.1]);
+                    }
+
+                    translate([-6,0,0]){
+                        hull(){
+                            cylinder(h=4.1,d=17);
+                            translate([0,15,0]){
+                                cylinder(h=4.1,d=17);
+                            }
+                        }
+                    }
+                }
+
+
+                translate([-5,8,-3]){
+                    cylinder(h=8,d=7.1);
+                }
+
+
+                translate([-5,8,3]){
+                    cylinder(h=8,d=10);
+                }
+
+                translate([-5,8,-7]){
+                    cylinder(h=8,d=13);
+                }
+            }
+        }
+    }
 }
 
-translate([-3.5,-10,1.3]){
-union(){
-translate([-20,50,-30]){
-difference(){
-hull(){
-cylinder(h=3.1,d=17);
-translate([0,15,0]){
-cylinder(h=3.1,d=17);
-}
-}
 
-translate([0,0,-3]){
-cylinder(h=8,d=7.1);
-}
-translate([0,15,-3]){
-cylinder(h=8,d=7.1);
-}
-}
-}
-}
-}
 
