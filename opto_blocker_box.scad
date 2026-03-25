@@ -46,7 +46,6 @@ cube([1.1,4,0.5]);
 //headpost();
 //}
 
-
 module headpost(){
 difference(){
 cube([13.6,13.3,1]);
@@ -90,10 +89,10 @@ CubeFaces = [
   
   
 CubePoints2 = [
-  [  1.3,  1.3,  0 ],  //0
-  [ 12,  1.3,  0 ],  //1
-  [ 11.7,  11.7,  0 ],  //2
-  [  1.3,  11.7,  0 ],  //3
+  [  2.0,  2,  0 ],  //0
+  [ 11.7,  2,  0 ],  //1
+  [ 11,  11,  0 ],  //2
+  [  2,  11,  0 ],  //3
   [  -4,  -4,  8 ],  //4
   [ 12.7+5,  -4,  8 ],  //5
   [ 12.7+5,  12+5,  8 ],  //6
@@ -106,7 +105,9 @@ CubeFaces2 = [
   [6,7,3,2],  // back
   [7,4,0,3]]; // left
 
-difference(){
+
+ difference(){
+ 
 color("limegreen"){ 
 translate([0,0,11]){
 polyhedron( CubePoints, CubeFaces );
@@ -119,21 +120,47 @@ polyhedron( CubePoints2, CubeFaces2);
 }
 }
 }
-//difference(){
-//    
-//    translate([0,0,1]){
-//        cube([14,14,0.25]);
-//    }
-//    translate([13.7/2,13.5/2,0]){
-//    cylinder(d=10,h=10);
-//    }
-//}
 
 translate([0,0,1.1]){
 difference(){
-cube([13.7,13,1]);
-translate([0.5,0.5,-2]){
-cube([12.7,12,4]);
+cube([13.7,13,10]);
+translate([0.75,0.75,-2]){
+cube([12,11.5,14]);
 }
 }
 }
+
+translate([13.7,9.25,1.1]){
+difference(){
+rotate([0,0,45]){
+cube([5,5,9]);
+}
+translate([0,0,-2]){
+cube([10,10,15]);
+translate([-5,3.575,0]){
+cube([10,10,15]);
+}
+}
+}
+}
+
+translate([13.7,9.25,6]){
+difference(){
+rotate([0,0,45]){
+cube([10,5,10]);
+}
+
+rotate([0,49.5,45]){
+translate([-3,-4,0]){
+cube([10,15,15]);
+}
+}
+}
+}
+
+
+
+
+
+
+
